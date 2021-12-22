@@ -1,7 +1,7 @@
 # MerkleRoot
 
 challenge project for calculating merkle root  
-*the result may not look the same with BitCoin's implementation as it have different endian convention*
+the result may not look the same with BitCoin's implementation as it have different endian convention
 
 ## Trying it out
 
