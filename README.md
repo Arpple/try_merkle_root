@@ -5,7 +5,7 @@ challenge project for calculating merkle root
 ## Trying it out
 
 ```shell
-iex -S mix
+$> iex -S mix
 
 # from file
 iex> MerkleRoot.from_file("input.txt")
