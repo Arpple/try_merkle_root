@@ -6,8 +6,8 @@ defmodule MerkleRoot do
 
   def get(transactions) do
     hashed_pairs = transactions
-    |> Enum.chunk_every(2)
-    |> Enum.map(&hash_transactions/1)
+    |> Stream.chunk_every(2)
+    |> Stream.map(&hash_pair/1)
 
     if is_root(hashed_pairs) do
       Enum.at(hashed_pairs, 0)
@@ -16,14 +16,15 @@ defmodule MerkleRoot do
     end
   end
 
-  defp hash_transactions([a]) do
-    hash_transactions([a, a])
+  defp hash_pair([a]) do
+    # without pair, hash with itself
+    hash_pair([a, a])
   end
 
-  defp hash_transactions([a, b]) do
-    hashed = a <> b
+  defp hash_pair([a, b]) do
+    a <> b
     |> hash()
-    |> hash()
+    |> hash() # double hash
   end
 
   defp hash(str) do

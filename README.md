@@ -1,21 +1,16 @@
 # MerkleRoot
 
-**TODO: Add description**
+challenge project for calculating merkle root  
 
-## Installation
+## Trying it out
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `merkle_root` to your list of dependencies in `mix.exs`:
+```shell
+iex -S mix
 
-```elixir
-def deps do
-  [
-    {:merkle_root, "~> 0.1.0"}
-  ]
-end
+# from file
+iex> MerkleRoot.from_file("input.txt")
+
+# or other Stream
+iex> MerkleRoot.get(["a", "b", "c", "d"])
 ```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/merkle_root](https://hexdocs.pm/merkle_root).
 
